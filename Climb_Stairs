@@ -1,0 +1,22 @@
+package Climb_Stairs;
+
+import java.util.Scanner;
+
+//假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+//每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+public class Climb_Stairs {
+    public static void main(String[] args) {
+        Climb_Stairs cs=new Climb_Stairs();
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("你要爬多少层楼：");
+        int n= scanner.nextInt();
+        int answer=cs.Climb_Stairs(n);
+        System.out.println("一共"+answer+"种方法");
+    }
+    public  static int Climb_Stairs(int n){
+        if (n<=2){
+            return n;
+        }
+        return Climb_Stairs(n-1)+Climb_Stairs(n-2);
+    }
+}
