@@ -1,0 +1,105 @@
+package Pet;
+//- 声明一个抽象类Pet，封装属性name和sex，声明一个带有两个参数的构造函数，声明抽象方法void talk()和void eat()；
+//- 声明一个Dog类继承自Pet，封装属性color，声明带有三个参数的构造函数，复写talk()和eat()方法；
+//- 声明一个Cat类继承自Pet，封装属性weight，声明带有三个参数的构造函数，复写talk()和eat()方法；
+//- 编写测试类，通过有参构造函数实例化Dog类对象，调用talk()方法和eat()方法；通过有参构造函数实例化Cat类对象 ，调用talk()方法和eat()方法；
+//- 在各自的动物子类定义定义一个自己特有的方法
+public abstract class Pet {
+    private String name;
+    private boolean sex;
+
+    public Pet(String name, boolean sex) {
+        this.name = name;
+        this.sex = sex;
+    }
+    abstract void talk();
+    abstract void eat();
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isSex() {
+        return sex;
+    }
+
+    public void setSex(boolean sex) {
+        this.sex = sex;
+    }
+}
+class Dog extends Pet{
+    private String color;
+
+    public Dog(String name, boolean sex, String color) {
+        super(name, sex);
+        this.color = color;
+    }
+
+    @Override
+    void talk() {
+        System.out.println("狗说");
+
+    }
+
+    @Override
+    void eat() {
+        System.out.println("狗吃");
+    }
+    void bark(){
+        System.out.println("bark~~~");
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+}
+
+class Cat extends Pet{
+    private double weight;
+
+    public Cat(String name, boolean sex, double weight) {
+        super(name, sex);
+        this.weight = weight;
+    }
+
+    @Override
+    void talk() {
+        System.out.println("猫说");
+    }
+
+    @Override
+    void eat() {
+        System.out.println("猫吃");
+    }
+    void miao(){
+        System.out.println("miao~~~");
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+}
+class Zoo{
+    public static void main(String[] args) {
+        Dog d=new Dog("d",true,"black");
+        d.eat();
+        d.talk();
+        d.bark();
+        Cat c=new Cat("c",false,12.2);
+        c.eat();
+        c.talk();
+        c.miao();
+    }
+}
