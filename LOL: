@@ -1,0 +1,53 @@
+package LOL;
+//- 简单的类的创建
+//- 类的属性可以包括但并不下限于：血量，蓝条，装备，攻击力，防御力，敏捷
+//- 将英雄之间的战斗做成回合制游戏，(可以while循环实现)
+//- 任何你所想的到的功能，尽可能的花哨
+//- 可以简单的写一个玩法介绍
+public class LOL {
+    public static void main(String[] args) {
+        Hero king=new Hero(5555,5555,"sxsx");
+        Hero queen=new Hero(6666,6666,"sxqx");
+        if (king.getBlood()< queen.getBlood()){
+            System.out.println("你的王败了");
+        }
+        else {
+            System.out.println("vector");
+        }
+}}
+class Hero{
+    private int blood;
+    private int blue;
+    private String equippment;
+
+    public Hero(int blood, int blue, String equippment) {
+        this.blood = blood;
+        this.blue = blue;
+        this.equippment = equippment;
+    }
+
+    public int getBlood() {
+        return blood;
+    }
+
+    public void setBlood(int blood) {
+        this.blood = blood;
+    }
+
+    public int getBlue() {
+        return blue;
+    }
+
+    public void setBlue(int blue) {
+        this.blue = blue;
+    }
+
+    public String getEquippment() {
+        return equippment;
+    }
+
+    public void setEquippment(String equippment) {
+        this.equippment = equippment;
+    }
+}
+
